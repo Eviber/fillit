@@ -6,7 +6,7 @@
 /*   By: ygaude <ygaude@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 15:50:53 by ygaude            #+#    #+#             */
-/*   Updated: 2016/12/11 15:57:37 by ygaude           ###   ########.fr       */
+/*   Updated: 2017/01/04 17:09:15 by ygaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	freeall(char *file, char **pieces, int i)
 			;
 	while (i)
 		ft_memdel((void *)&pieces[i--]);
-	ft_memdel((void *)&pieces);
+	ft_memdel((void **)pieces);
 	ft_memdel((void *)&file);
 	err("error");
 }
