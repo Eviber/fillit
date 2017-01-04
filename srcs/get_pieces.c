@@ -6,7 +6,7 @@
 /*   By: btollet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 16:01:10 by btollet           #+#    #+#             */
-/*   Updated: 2016/12/13 19:20:22 by ygaude           ###   ########.fr       */
+/*   Updated: 2017/01/04 16:54:34 by ygaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,17 @@ char	*get_piece(char *square)
 	dieze = 0;
 	j = -1;
 	pieces = ft_strnew(9);
+	i = 0;
+	while (square[++j])
+		if (is_empty(square, j, 5))
+		{
+			if (square[j] == '#')
+				dieze++;
+			pieces[i++] = square[j];
+		}
+	pieces[i] = '\0';
 	i = check_pieces(square);
-	if (i == 6 || i == 8)
-	{
-		i = 0;
-		while (square[++j] && dieze != 4)
-			if (is_empty(square, j, 5))
-			{
-				if (square[j] == '#')
-					dieze++;
-				pieces[i++] = square[j];
-			}
-		pieces[i] = '\0';
-	}
-	else
+	if (!(i == 6 || i == 8) || dieze != 4)
 		ft_memdel((void *)&pieces);
 	return (pieces);
 }

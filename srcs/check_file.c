@@ -6,7 +6,7 @@
 /*   By: ygaude <ygaude@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 18:41:32 by ygaude            #+#    #+#             */
-/*   Updated: 2016/12/10 20:26:14 by ygaude           ###   ########.fr       */
+/*   Updated: 2017/01/04 16:54:03 by ygaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		check_file(char *file)
 	tmp = file;
 	nb_of_square = 0;
 	if ((file[ft_strlen(file) - 1] == '\n' && file[ft_strlen(file) - 2] == '\n')
-		|| file[0] == '\0')
+		|| file[0] == '\0' || file[ft_strlen(file) - 1] != '\n')
 	{
 		ft_memdel((void *)&tmp);
 		err("error");

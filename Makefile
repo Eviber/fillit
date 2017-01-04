@@ -6,7 +6,7 @@
 #    By: ygaude <ygaude@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/13 19:09:01 by ygaude            #+#    #+#              #
-#    Updated: 2016/12/13 19:23:10 by ygaude           ###   ########.fr        #
+#    Updated: 2017/01/04 16:27:48 by ygaude           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,22 +30,22 @@ OBJS = ${SRCS:c=o}
 all: $(NAME)
 
 %.o : %.c
-	@$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) $(CFLAGS) -c -o $@ $^
 
 $(NAME): lib $(OBJS)
-	@gcc $(FLAGS) $(OBJS) $(LIB)libft.a -I $(LIB) -o $(NAME)
+	gcc $(FLAGS) $(OBJS) $(LIB)libft.a -I $(LIB) -o $(NAME)
 	@echo Done !
 
 lib:
-	@make -C $(LIB)
+	make -C $(LIB)
 
 clean:
-	@rm -f $(OBJS)
-	@make -C $(LIB) clean
+	rm -f $(OBJS)
+	make -C $(LIB) clean
 
 fclean: clean
-	@rm -f $(NAME)
-	@make -C $(LIB) fclean
+	rm -f $(NAME)
+	make -C $(LIB) fclean
 
 re: fclean all
 
