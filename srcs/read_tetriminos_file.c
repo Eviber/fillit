@@ -6,7 +6,7 @@
 /*   By: ygaude <ygaude@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 18:42:45 by ygaude            #+#    #+#             */
-/*   Updated: 2016/12/13 19:22:29 by ygaude           ###   ########.fr       */
+/*   Updated: 2017/01/05 16:58:19 by ygaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strappend(char *s1, char *s2)
 char	*read_file(char *file)
 {
 	int		fd;
-	int		ret;
+	long	ret;
 	char	buf[BUFF_SIZE];
 	char	*file_content;
 

@@ -6,7 +6,7 @@
 #    By: ygaude <ygaude@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/13 19:09:01 by ygaude            #+#    #+#              #
-#    Updated: 2017/01/04 16:27:48 by ygaude           ###   ########.fr        #
+#    Updated: 2017/01/05 17:10:42 by ygaude           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,4 +49,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all lib

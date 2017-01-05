@@ -6,19 +6,19 @@
 /*   By: btollet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 16:01:10 by btollet           #+#    #+#             */
-/*   Updated: 2017/01/04 16:54:34 by ygaude           ###   ########.fr       */
+/*   Updated: 2017/01/05 17:02:34 by ygaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	**get_pieces(char *file)
+char	**get_pieces(const char *file)
 {
 	char	**pieces;
 	int		i;
 	int		len;
 
-	len = check_file(file);
+	len = check_file((char *)file);
 	i = -1;
 	if ((pieces = (char **)malloc(sizeof(char *) * (len + 1))) == NULL)
 	{
@@ -29,7 +29,9 @@ char	**get_pieces(char *file)
 	{
 		pieces[i] = get_piece(ft_strsub(file, i * 21, 21));
 		if (!pieces[i])
-			freeall(file, pieces, i);
+		{
+			freeall(NULL, pieces, i);
+		}
 		pieces[i] = replace_letter(pieces[i], 'A' + i);
 	}
 	pieces[i] = NULL;

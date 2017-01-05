@@ -6,7 +6,7 @@
 /*   By: btollet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 16:00:30 by btollet           #+#    #+#             */
-/*   Updated: 2016/12/13 19:17:41 by ygaude           ###   ########.fr       */
+/*   Updated: 2017/01/05 17:15:57 by ygaude           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "../libft/libft.h"
 # define BUFF_SIZE 42
 
+char	*ft_strappend(char *s1, char *s2);
 void	err(char *msg);
 void	freeall(char *file, char **pieces, int i);
 size_t	file_len(char *file);
@@ -27,7 +28,7 @@ char	*read_file(char *file);
 int		check_line(char *line);
 int		check_square(char *square);
 int		check_file(char *file);
-char	**get_pieces(char *file);
+char	**get_pieces(const char *file);
 char	*get_piece(char *square);
 int		check_pieces(char *square);
 int		check_nb_of_dieze(char *square);
